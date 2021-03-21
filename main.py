@@ -1,14 +1,16 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import random
+from constant import docs, github, sheet, api
+
 
 from greeter import Greeter
 
-API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI"
+API_TOKEN = api
 
-CONTATINHOS_SHEET_LINK = "https://docs.google.com/spreadsheets/d/1Kfy-tCDA_UggPUOaYs1w9oN_DtuL6GBWPyCmcl_R3f8/edit?usp=sharing"
-GITHUB_REPO_LINK = "https://github.com/lineuzinho-icmc/lineuzinho"
-SAVED_DOCS_LINK = "https://t.me/docs21"
+CONTATINHOS_SHEET_LINK = sheet
+GITHUB_REPO_LINK = github
+SAVED_DOCS_LINK = docs
 
 DOCS_CHANNEL_MESSAGES_MAX = 800
 
