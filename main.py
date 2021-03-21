@@ -1,16 +1,10 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import random
+import constant
 
 from greeter import Greeter
 
-API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI"
-
-CONTATINHOS_SHEET_LINK = "https://docs.google.com/spreadsheets/d/1Kfy-tCDA_UggPUOaYs1w9oN_DtuL6GBWPyCmcl_R3f8/edit?usp=sharing"
-GITHUB_REPO_LINK = "https://github.com/lineuzinho-icmc/lineuzinho"
-SAVED_DOCS_LINK = "https://t.me/docs21"
-
-DOCS_CHANNEL_MESSAGES_MAX = 800
 
 greeter = Greeter()
 
@@ -19,23 +13,24 @@ def start(update, context):
 
 def contatinhos(update, context):
     update.message.reply_text("CHAMA NOS CONTATINHO")
-    update.message.reply_text(CONTATINHOS_SHEET_LINK, disable_web_page_preview=True)
+    update.message.reply_text(constant.CONTATINHOS_SHEET_LINK, disable_web_page_preview=True)
 
 def repo(update, context):
-    update.message.reply_text(GITHUB_REPO_LINK)
+    update.message.reply_text(constant.GITHUB_REPO_LINK)
 
 def help(update, context):
     update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
 def save(update, context):
     originalMessage = update.message.reply_to_message
-    if not originalMessage or not originalMessage.text:
-        update.message.reply_text("faz o comando respondendo alguma coisa...", parse_mode="Markdown")
+    logging.info(originalMessage)
+    if not originalMessage:
+        update.message.reply_text("faz o comando respondendo alguma coisa...")
 
     context.bot.forwardMessage("@docs21", update.effective_chat.id, originalMessage.message_id)
 
 def docsChannel(update, context):
-    update.message.reply_text(SAVED_DOCS_LINK)
+    update.message.reply_text(constant.SAVED_DOCS_LINK)
 
 def main():
     logger = logging.getLogger(__name__)
@@ -43,7 +38,7 @@ def main():
         format='%(asctime)s [%(levelname)s] %(message)s', level=logging.INFO
     )
 
-    updater = Updater(API_TOKEN)
+    updater = Updater(constant.API_TOKEN)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
