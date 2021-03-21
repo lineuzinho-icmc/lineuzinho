@@ -2,6 +2,19 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import random
 
+seed(1) #seed do random
+#define emojis unicode
+red = "\U0001F534"
+yellow = "\U0001F7E1"
+green = "\U0001F7E2"
+blue = "\U0001F535"
+radioactive = "\U00002622" 
+black = "\U000026AB"
+white = "\U000026AA"
+purple = "\U0001F7E3"
+orange = "\U0001F7E0"
+brown = "\U0001F7E4"
+
 from greeter import Greeter
 
 API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI"
@@ -50,6 +63,13 @@ def save(update, context):
 
 def docsChannel(update, context):
     update.message.reply_text(SAVED_DOCS_LINK)
+    
+def feijao(update, context):
+	sabores = ["Picanha " + red, "Banana " + yellow, "Pimenta Preta " + black, "Meleca " + green, "Algodão Doce" + purple, "Cereja " + red, "Minhoca " + brown, "Cera " + yellow, "Grama " + green, "Azeitona " + green, "Ovo Podre " + yellow, "Salsicha " + red, "Sabonete " + blue, "Cerveja " + yellow, "Tutti-Fruti " + purple, "Vômito " + green, "Tamarindo " + orange, "Césio-137 " + blue, "Coquinha Gelada " + red, "Desodorante " + white, "Farofa Pronta Yoki " + yellow, "Kaiser " + yellow, "Crocs " + blue, "Corote de Pêssego" + orange, "Caldo de Cana " + green, "Sola de Sapato " + brown, "Pilha Panasonic " + blue, "Vinho " + purple, "Diesel " + orange]
+	length = len(sabores) - 1
+	valorRandomico = randint(0, length)
+	s = sabores[valorRandomico]	
+	update.message.reply_text(s)
 
 def main():
     logger = logging.getLogger(__name__)
@@ -65,6 +85,7 @@ def main():
     dp.add_handler(CommandHandler("docs", docsChannel))
     dp.add_handler(CommandHandler("contatinhos", contatinhos))
     dp.add_handler(CommandHandler("repo", repo))
+    dp.add_handler(CommandHandler("feijao", feijao))
     dp.add_handler(CommandHandler("help", help))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, greeter.newMembersGreetings))
