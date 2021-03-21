@@ -5,6 +5,7 @@ if __name__ == "__main__":
     try:
         with open("safe.txt",'w',encoding = 'utf-8') as f:
             f.write(sys.argv[1])
+        print("Saved key: " + sys.argv[1])
     except:
     	print("Please, add API key to console call")
         
