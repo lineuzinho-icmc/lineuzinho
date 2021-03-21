@@ -1,3 +1,4 @@
 .vscode
 __pychache__/
 local_venv
+constant.py
