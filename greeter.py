@@ -7,7 +7,7 @@ class Greeter:
             "roi {0} 😳👉👈 chama no pv",
             "vem co nois {0}! seja bem vinde!",
             "coe {0}, bien venidx ;)",
-            "comequiceta {0}?? bem vinde!"
+            "comequiceta {0}?? bem vinde!",
             "MEU DEUS OLHA QUEM CHEGO\nboas vindas {0} 🤤",
             "{0} ME NOTA EU SO SEU FÃ",
             "deem as boas vindas para a 8ª maravilha do mundo: {0}",
