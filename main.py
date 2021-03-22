@@ -1,7 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import logging
-import random
-import constant
+import logging, random, constant, commands
 
 from greeter import Greeter
 greeter = Greeter()
