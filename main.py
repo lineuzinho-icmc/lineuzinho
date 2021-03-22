@@ -1,6 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-import constant
 
 from lineuzinho import Lineuzinho
 
@@ -9,7 +8,7 @@ def main():
     logging.basicConfig(format='%(asctime)s [%(levelname)s]: %(message)s', level=logging.INFO)
 
     lineuzinho = Lineuzinho()
-    updater = Updater(constant.API_TOKEN)
+    updater = Updater(lineuzinho.API_TOKEN)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", lineuzinho.start))
