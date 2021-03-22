@@ -1,3 +1,7 @@
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import logging
+import random
+import constant
 
 def start(update, context):
     update.message.reply_text("pó fala meu rei")
