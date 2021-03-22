@@ -3,10 +3,11 @@ import random
 import os
 
 import greeter
+import forwarder
 
 class Lineuzinho:
     def __init__(self):
-        self.API_TOKEN = os.environ["SECRET"]
+        self.API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI" #os.environ["SECRET"]
         self.CONTATINHOS_SHEET = "https://shorturl.at/nMOV2"
         self.GITHUB_REPO = "https://github.com/lineuzinho-icmc/lineuzinho"
         self.USEFUL_LINKS = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\n".format(self.CONTATINHOS_SHEET)
@@ -33,11 +34,7 @@ class Lineuzinho:
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
     def save(self, update, context):
-        originalMessage = update.message.reply_to_message
-        if not originalMessage:
-            update.message.reply_text("faz o comando respondendo alguma coisa...")
-
-        context.bot.forwardMessage("@docs21", update.effective_chat.id, originalMessage.message_id)
+        forwarder.saveToDocs(update, context)
 
     def getDocsChannel(self, update, context):
         update.message.reply_text(self.DOCS_CHANNEL)
