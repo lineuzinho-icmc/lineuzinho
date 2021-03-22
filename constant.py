@@ -1,8 +1,8 @@
 import os
 import sys
 
-API_TOKEN = os.environ["SECRET"]
+API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI"
 
-CONTATINHOS_SHEET = "https://docs.google.com/spreadsheets/d/1Kfy-tCDA_UggPUOaYs1w9oN_DtuL6GBWPyCmcl_R3f8/edit?usp=sharing"
+CONTATINHOS_SHEET = "https://shorturl.at/nMOV2"
 GITHUB_REPO = "https://github.com/lineuzinho-icmc/lineuzinho"
 DOCS_CHANNEL = "https://t.me/docs21"
