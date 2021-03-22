@@ -34,7 +34,7 @@ class Lineuzinho:
         context.bot.send_message(chat_id=update.effective_chat.id, text="CHAMA NOS CONTATINHO\n{0}".format(self.contatinhosSheet), disable_web_page_preview=True)
 
     def getDocsChannel(self, update, context):
-        context.bot.send_message(chat_id=update.effective_chat.id, text=self.docsChannel, disable_web_page_preview=True)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.docsChannel)
 
     def save(self, update, context):
         self.forwarder.saveToDocs(update, context)
