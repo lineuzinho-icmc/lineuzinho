@@ -3,7 +3,7 @@ import random
 import os
 
 from greeter import Greeter
-import forwarder
+from forwarder import Forwarder
 
 class Lineuzinho:
     def __init__(self):
@@ -14,6 +14,7 @@ class Lineuzinho:
         self.DOCS_CHANNEL = "https://t.me/docs21"
 
         self.greeter = Greeter()
+        self.forwarder = Forwarder()
 
     def start(self, update, context):
         update.message.reply_text("pó fala meu rei")
@@ -36,7 +37,7 @@ class Lineuzinho:
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
     def save(self, update, context):
-        forwarder.saveToDocs(update, context)
+        self.forwarder.saveToDocs(update, context)
 
     def getDocsChannel(self, update, context):
         update.message.reply_text(self.DOCS_CHANNEL)
