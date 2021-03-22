@@ -1,15 +1,15 @@
-import random
+from random import randint
 
 class Greeter:
     def __init__(self):
-        self.GREETINGS = [
+        self.greetings = [
             "roi {0} 😳👉👈 chama no pv",
             "vem co nois {0}! seja bem vinde!",
             "coe {0}, bien venidx ;)",
             "comequiceta {0}?? bem vinde!",
-            "MEU DEUS OLHA QUEM CHEGO\nboas vindas {0} 🤤",
+            "MEU DEUS OLHA QUEM CHEGO\nboas vindas {0} 🤩",
             "{0} ME NOTA EU SO SEU FÃ",
-            "deem as boas vindas para a 8ª maravilha do mundo: {0}",
+            "EIS A 8ª MARAVILHA DO MUNDO: {0} 🤤",
             "AGORA VAI\n{0} na área 🤩"
         ]
 
@@ -22,5 +22,5 @@ class Greeter:
         else:
             welcomeVocative = newMembers[0].first_name.split(" ")[0].capitalize()
         
-        rdWelcomeIndex = random.randint(0, len(self.GREETINGS) - 1)
-        return self.GREETINGS[rdWelcomeIndex].format(welcomeVocative)
+        rdWelcomeIndex = randint(0, len(self.greetings) - 1)
+        return self.greetings[rdWelcomeIndex].format(welcomeVocative)

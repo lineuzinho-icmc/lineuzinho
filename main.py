@@ -12,11 +12,12 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", lineuzinho.start))
-    dp.add_handler(CommandHandler("save", lineuzinho.save))
-    dp.add_handler(CommandHandler("docs", lineuzinho.getDocsChannel))
-    dp.add_handler(CommandHandler("contatinhos", lineuzinho.getContatinhos))
     dp.add_handler(CommandHandler("links", lineuzinho.links))
     dp.add_handler(CommandHandler("repo", lineuzinho.getRepo))
+    dp.add_handler(CommandHandler("contatinhos", lineuzinho.getContatinhos))
+    dp.add_handler(CommandHandler("feijao", lineuzinho.getBeanFlavor))
+    dp.add_handler(CommandHandler("docs", lineuzinho.getDocsChannel))
+    dp.add_handler(CommandHandler("save", lineuzinho.save))
     dp.add_handler(CommandHandler("help", lineuzinho.help))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, lineuzinho.greet))
