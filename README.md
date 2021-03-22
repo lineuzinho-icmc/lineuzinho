@@ -1,5 +1,5 @@
-## Lineuzinho ##
+# Lineuzinho #
 Bot da BCC021 :D
+by Beni & Zimmer
 
-# Commands #
-- /contatinhos -> link dos contatinhos da 21
+Lança a braba num PR ae
