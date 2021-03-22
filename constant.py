@@ -1,7 +1,7 @@
 import os
 import sys
 
-API_TOKEN = "1700885261:AAETCokNpqNDk44x3d5XASfnQfzxiNOKWfI"
+API_TOKEN = os.environ["SECRET"]
 
 CONTATINHOS_SHEET = "https://shorturl.at/nMOV2"
 GITHUB_REPO = "https://github.com/lineuzinho-icmc/lineuzinho"
