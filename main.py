@@ -28,7 +28,7 @@ def links(update, context):
     BO FAZER BOT https://www.gabekanegae.com/creating-a-telegram-bot-with-python/""")    
     
 def repo(update, context):
-    update.message.reply_text(constant.GITHUB_REPO_LINK)
+    update.message.reply_text(constant.GITHUB_REPO)
 
 def help(update, context):
     update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
