@@ -1,4 +1,4 @@
-import psycopg2
+import os, psycopg2
 
 class Connection():
     self.DATABASE_URL = os.environ['DATABASE_URL']
