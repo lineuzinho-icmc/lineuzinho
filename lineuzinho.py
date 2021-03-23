@@ -1,11 +1,13 @@
-import os
+import os, pi_manager
 
 from db import Connection
 from greeter import Greeter
 from forwarder import Forwarder
 from beaner import Beaner
+import time, random
 
 class Lineuzinho:
+
     def __init__(self):
         self.API_TOKEN = os.environ["SECRET"]
         self.contatinhosSheet = "http://bit.ly/contatosbcc021"
@@ -18,6 +20,7 @@ class Lineuzinho:
         self.beaner = Beaner()
 
         self.conn = Connection()
+        self.last_pi_call = time.time()
 
     def start(self, update, context):
         update.message.reply_text("pó fala meu rei")
@@ -46,5 +49,21 @@ class Lineuzinho:
         beanFlavor = self.beaner.getFlavor()
         context.bot.send_message(chat_id=update.effective_chat.id, text=beanFlavor)
 
+    def getPiRanking(self, update, context):
+        if time.time() - self.last_pi_call > 86400:
+            self.last_pi_call = time.time()
+            pi_manager.generate_daily_ranking()
+        context.bot.send_message(chat_id=update.effective_chat.id, text=pi_manager.get_daily_ranking())
+
+    def getUserPiRanking(self, update, context):
+        if time.time() - self.last_pi_call > 86400:
+            self.last_pi_call = time.time()
+            pi_manager.generate_daily_ranking()
+        context.bot.send_message(chat_id=update.effective_chat.id, text=pi_manager.get_member_ranking(update.message.from_user.username))
+
     def help(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
+
+    def randomActivityAlert(self, update, context):
+        if random.randint(0, 500) == 250:
+            update.message.reply_text("Oi, desculpa atrapalhar, mas... já fez suas atividades de hoje? :)")
