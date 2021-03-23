@@ -1,5 +1,6 @@
 import os
 
+from db import Connection
 from greeter import Greeter
 from forwarder import Forwarder
 from beaner import Beaner
@@ -15,6 +16,8 @@ class Lineuzinho:
         self.greeter = Greeter()
         self.forwarder = Forwarder()
         self.beaner = Beaner()
+
+        self.conn = Connection()
 
     def start(self, update, context):
         update.message.reply_text("pó fala meu rei")
