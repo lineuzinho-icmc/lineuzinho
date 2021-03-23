@@ -67,3 +67,18 @@ class Lineuzinho:
     def randomActivityAlert(self, update, context):
         if random.randint(0, 500) == 250:
             update.message.reply_text("Oi, desculpa atrapalhar, mas... já fez suas atividades de hoje? :)")
+            
+    def rojao(self, update, context):
+        numeroDePra = random.randint(1,4)
+        numeroDePow = random.randint(0,3)
+
+        update.message.reply_text("bora acender essa porra")
+        update.message.reply_text("pra pra pra")
+
+        for x in range(0, numeroDePra):
+            update.message.reply_text("pra")
+
+        update.message.reply_text("pra pra")
+
+        for x in range(0, numeroDePow):
+            update.message.reply_text("POOOOWW")
