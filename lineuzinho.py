@@ -9,7 +9,7 @@ class Lineuzinho:
         self.API_TOKEN = os.environ["SECRET"]
         self.contatinhosSheet = "http://bit.ly/contatosbcc021"
         self.githubRepo = "https://github.com/lineuzinho-icmc/lineuzinho"
-        self.usefulLinks = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\n".format(self.contatinhosSheet)
+        self.usefulLinks = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\nEnquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh\n\n".format(self.contatinhosSheet)
         self.docsChannel = "https://t.me/docs21"
 
         self.greeter = Greeter()
