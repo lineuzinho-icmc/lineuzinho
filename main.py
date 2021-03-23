@@ -21,6 +21,7 @@ def main():
     dp.add_handler(CommandHandler("help", lineuzinho.help))
     dp.add_handler(CommandHandler("pi_rank", lineuzinho.getPiRanking))
     dp.add_handler(CommandHandler("pi_index", lineuzinho.getUserPiRanking))
+    dp.add_handler(CommandHandler("rojao", lineuzinho.rojao))
     dp.add_handler(MessageHandler(Filters.text, lineuzinho.randomActivityAlert))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, lineuzinho.greet))
