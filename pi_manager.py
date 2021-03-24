@@ -1,18 +1,15 @@
 from db import Connection
 from random import randint
-def pi(n):
-    q, r, t, k, m, x = 1, 0, 1, 1, 3, 3
-    for j in range(n):
-        if 4 * q + r - t < m * t:
-            yield m
-            q, r, t, k, m, x = 10*q, 10*(r-m*t), t, k, (10*(3*q+r))//t - 10*m, x
-        else:
-            q, r, t, k, m, x = q*k, (2*q+r)*x, t*x, k+1, (q*(7*k+2)+r*x)//(t*x), x+2
+def pi():
+    pi = ''
+    with open('pi.txt', 'r') as filename:
+        pi = filename.read()
+    return pi
 
 def find_in_pi(pos):
     arr = ''
     #Generating pi to nTh digit
-    for i in pi(10000):
+    for i in pi():
         arr += str(i)
     return arr.find(str(pos))
 
@@ -21,12 +18,12 @@ def get_member_ranking(username):
     member = conn.query_sql("SELECT * FROM members where username = '" + username + "'")
     ranked = sorted([(x[0], x[1], find_in_pi(x[2])) for x in conn.get_pi_members()], key=lambda tup: tup[2])
     if member:
-        return str(ranked.index((member[0], member[1], find_in_pi(member[2]))) + 1) + "°: " + member[1] + ", respectiva posição nos dígitos de π: " + str(member[2]) + "\n"
+        return str(ranked.index((member[0], member[1], find_in_pi(member[2]))) + 1) + "°: " + member[1] + ", posição em π: " + str(member[2]) + "\n"
     else:
         generate_member_ranking(username)
         member = conn.query_sql("SELECT * FROM members where username = '" + username + "'")
         ranked = sorted([(x[0], x[1], find_in_pi(x[2])) for x in conn.get_pi_members()], key=lambda tup: tup[2])
-        return str(ranked.index((member[0], member[1], find_in_pi(member[2]))) + 1) + "°: " + member[1] + ", respectiva posição nos dígitos de π: " + str(member[2]) + "\n"
+        return str(ranked.index((member[0], member[1], find_in_pi(member[2]))) + 1) + "°: " + member[1] + ", posição em π: " + str(member[2]) + "\n"
         
 
 def generate_member_ranking(username):
@@ -49,7 +46,7 @@ def get_daily_ranking():
     msg = ''
     ranked = sorted([(x[0], x[1], find_in_pi(x[2])) for x in conn.get_pi_members()], key=lambda tup: tup[2])
     for rank in ranked:
-        msg += str(ranked.index(rank) + 1) + "°: " + rank[1] + ", respectiva posição nos dígitos de π: " + str(rank[2]) + "\n"
+        msg += str(ranked.index(rank) + 1) + "°: " + rank[1] + ", posição em π: " + str(rank[2]) + "\n"
     return msg
     
 def generate_daily_ranking():
