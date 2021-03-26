@@ -1,9 +1,9 @@
-import os, pi_manager
+import os
 
-from db import Connection
 from greeter import Greeter
 from forwarder import Forwarder
 from beaner import Beaner
+from pi_ranker import PiRanker
 import time, random
 
 class Lineuzinho:
@@ -18,8 +18,7 @@ class Lineuzinho:
         self.greeter = Greeter()
         self.forwarder = Forwarder()
         self.beaner = Beaner()
-
-        self.conn = Connection()
+        self.piRanker = PiRanker()
 
     def start(self, update, context):
         update.message.reply_text("pó fala meu rei")
@@ -49,12 +48,12 @@ class Lineuzinho:
         context.bot.send_message(chat_id=update.effective_chat.id, text=beanFlavor)
 
     def getPiRanking(self, update, context):
-        pi_manager.generate_daily_ranking()
-        context.bot.send_message(chat_id=update.effective_chat.id, text=pi_manager.get_daily_ranking())
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getDailyRanking())
 
     def getUserPiRanking(self, update, context):
-        pi_manager.generate_daily_ranking()
-        context.bot.send_message(chat_id=update.effective_chat.id, text=pi_manager.get_member_ranking(update.message.from_user.username))
+        username = update.message.from_user.username
+        self.piRanker.generateUserPiRank(username)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getUserPiRank(username))
 
     def help(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
