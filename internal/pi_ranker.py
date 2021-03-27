@@ -12,7 +12,7 @@ class PiRanker:
         return self.preProcPiRanks[str(pos)]
 
     def getUserPiRank(self, username):
-        return "{0}: seu pi-rank diário é {0} PI".format(username, self.piRanks[username])
+        return "{0}: seu pi-rank diário é {1} PI".format(username, self.piRanks[username])
 
     def generateUserPiRank(self, username):
         self.checkRankExpiration()
