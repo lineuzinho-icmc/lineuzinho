@@ -4,7 +4,7 @@ import logging
 from lineuzinho import Lineuzinho
 
 def main():
-    logger = logging.getLogger(__name__)
+    logging.getLogger(__name__)
     logging.basicConfig(format='%(asctime)s [%(levelname)s]: %(message)s', level=logging.INFO)
 
     lineuzinho = Lineuzinho()
@@ -20,8 +20,9 @@ def main():
     dp.add_handler(CommandHandler("save", lineuzinho.save))
     dp.add_handler(CommandHandler("help", lineuzinho.help))
     dp.add_handler(CommandHandler("pi_rank", lineuzinho.getPiRanking))
-    dp.add_handler(CommandHandler("pi_index", lineuzinho.getUserPiRanking))
-    dp.add_handler(MessageHandler(Filters.text, lineuzinho.randomActivityAlert))
+    dp.add_handler(CommandHandler("pi_index", lineuzinho.generateUserPiRanking))
+    dp.add_handler(CommandHandler("birthday", lineuzinho.birthday))
+    dp.add_handler(MessageHandler(Filters.text, lineuzinho.agiotar))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, lineuzinho.greet))
 

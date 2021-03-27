@@ -3,7 +3,9 @@ import os
 from greeter import Greeter
 from forwarder import Forwarder
 from beaner import Beaner
+from activityAgiota import ActivityAgiota
 from pi_ranker import PiRanker
+import datetime
 import time, random
 
 class Lineuzinho:
@@ -18,6 +20,8 @@ class Lineuzinho:
         self.greeter = Greeter()
         self.forwarder = Forwarder()
         self.beaner = Beaner()
+        self.activityAgiota = ActivityAgiota()
+
         self.piRanker = PiRanker()
 
     def start(self, update, context):
@@ -50,14 +54,15 @@ class Lineuzinho:
     def getPiRanking(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getDailyRanking())
 
-    def getUserPiRanking(self, update, context):
-        username = update.message.from_user.username
-        self.piRanker.generateUserPiRank(username)
-        context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getUserPiRank(username))
+    def generateUserPiRanking(self, update, context):
+        self.piRanker.generateUserPiRank(update.message.from_user.username)
+        context.bot.send_message(chat_id=update.effective_chat.id, text="seu pi-rank diário: {0}".format(self.piRanker.getUserPiRank(username)))
 
     def help(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
-    def randomActivityAlert(self, update, context):
-        if random.randint(0, 500) == 250:
-            update.message.reply_text("Oi, desculpa atrapalhar, mas... já fez suas atividades de hoje? :)")
+    def agiotar(self, update, context):
+        self.activityAgiota.randomAnnoy(update)
+    
+    def birthday(self, update, context):
+        context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
