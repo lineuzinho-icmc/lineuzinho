@@ -1,10 +1,10 @@
 import os
 
-from greeter import Greeter
-from forwarder import Forwarder
-from beaner import Beaner
-from activityAgiota import ActivityAgiota
-from pi_ranker import PiRanker
+from internal.greeter import Greeter
+from internal.beaner import Beaner
+from internal.forwarder import Forwarder
+from internal.activityAgiota import ActivityAgiota
+from internal.pi_ranker import PiRanker
 import datetime
 import time, random
 
