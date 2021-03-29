@@ -57,7 +57,7 @@ class Lineuzinho:
     def generateUserPiRanking(self, update, context):
         username = update.message.from_user.username
         self.piRanker.generateUserPiRank(update.message.from_user.username)
-        context.bot.send_message(chat_id=update.effective_chat.id, text="seu pi-rank diário: {0}".format(self.piRanker.getUserPiRank(username)))
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getUserPiRank(username))
 
     def help(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
