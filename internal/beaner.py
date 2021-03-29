@@ -1,4 +1,4 @@
-from random import randint
+from random import choice
 
 class Beaner:
     def __init__(self):
@@ -48,5 +48,4 @@ class Beaner:
         ]
 
     def getFlavor(self):
-        rdFlavorIndex = randint(0, len(self.sabores) - 1)
-        return self.sabores[rdFlavorIndex]
+        return choice(self.sabores)
