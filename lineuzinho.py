@@ -35,6 +35,9 @@ class Lineuzinho:
 
     def links(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.usefulLinks, disable_web_page_preview=True)
+        
+    def lives(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.lives, disable_web_page_preview=True)
 
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)
