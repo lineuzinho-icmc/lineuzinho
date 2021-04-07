@@ -14,6 +14,7 @@ class Lineuzinho:
         self.API_TOKEN = os.environ["SECRET"]
         self.contatinhosSheet = "http://bit.ly/contatosbcc021"
         self.githubRepo = "https://github.com/lineuzinho-icmc/lineuzinho"
+        self.lives = "Live da primeira semana: http://bit.ly/aberturadasemana \n\nLive do JB: bit.ly/calldojb\n\n"
         self.usefulLinks = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\nEnquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh\n\nDrive com livros: http://bit.ly/livrosbccicmc\n\n".format(self.contatinhosSheet)
         self.docsChannel = "https://t.me/docs21"
 
