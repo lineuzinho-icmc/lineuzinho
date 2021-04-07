@@ -13,6 +13,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", lineuzinho.start))
     dp.add_handler(CommandHandler("links", lineuzinho.links))
+    dp.add_handler(CommandHandler("lives", lineuzinho.lives))
     dp.add_handler(CommandHandler("repo", lineuzinho.getRepo))
     dp.add_handler(CommandHandler("contatinhos", lineuzinho.getContatinhos))
     dp.add_handler(CommandHandler("feijao", lineuzinho.getBeanFlavor))
