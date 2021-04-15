@@ -14,12 +14,10 @@ class Greeter:
         ]
 
     def generateNewMembersGreetings(self, newMembers):
-        welcomeVocative = ""
-        if len(newMembers) > 1:
-            for newMember in newMembers[:-1]:
-                welcomeVocative += "{0}, ".format(newMember.first_name.split(" ")[0].lower())
-            welcomeVocative += " e {0}".format(newMembers[-1].first_name.split(" ")[0].lower())
+        welcomeVocative = newMembers[0].first_name.split(" ")[0]
+        greeting = choice(self.greetings)
+
+        if self.greetings.index(greeting) < 4:
+            return greeting.format(welcomeVocative.capitalize())
         else:
-            welcomeVocative = newMembers[0].first_name.split(" ")[0].capitalize()
-        
-        return choice(self.greetings).format(welcomeVocative)
+            return greeting.format(welcomeVocative.upper())

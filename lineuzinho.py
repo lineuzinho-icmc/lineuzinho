@@ -34,10 +34,10 @@ class Lineuzinho:
         greetings = self.greeter.generateNewMembersGreetings(newMembers)
         context.bot.send_message(chat_id=update.effective_chat.id, text=greetings)
 
-    def links(self, update, context):
+    def getGeneralRelevantLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.usefulLinks, disable_web_page_preview=True)
         
-    def livesLinks(self, update, context):
+    def getLivesLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.lives, disable_web_page_preview=True)
 
     def getSubjectsGroupsLinks(self, update, context):
@@ -46,13 +46,13 @@ class Lineuzinho:
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)
 
-    def getContatinhos(self, update, context):
+    def getContatinhosLink(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text="CHAMA NOS CONTATINHO\n{0}".format(self.contatinhosSheet), disable_web_page_preview=True)
 
     def getDocsChannel(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.docsChannel)
 
-    def save(self, update, context):
+    def saveMessage(self, update, context):
         self.forwarder.saveToDocs(update, context)
 
     def getBeanFlavor(self, update, context):
@@ -62,19 +62,19 @@ class Lineuzinho:
     def getPiRanking(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getDailyRanking())
 
-    def generateUserPiRanking(self, update, context):
+    def publishUserPiRanking(self, update, context):
         username = update.message.from_user.username
         self.piRanker.generateUserPiRank(update.message.from_user.username)
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.piRanker.getUserPiRank(username))
 
-    def help(self, update, context):
+    def getHelpText(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
     def agiotar(self, update, context):
         self.activityAgiota.randomAnnoy(update)
     
-    def birthday(self, update, context):
+    def getBirthdaySongAudio(self, update, context):
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
 
-    def beni(self, update, context):
+    def getBeniSongAudio(self, update, context):
             context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/beni.mp3', 'rb'))

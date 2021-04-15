@@ -8,7 +8,8 @@ class ActivityAgiota:
             "tá falano pacaralho no grupo e fazer trampo que é bom nada né",
             "hahah pdp pdp e as atividades lá, tão pronta já? ",
             "s-s-senpai-chan 😳, já fizeste v-vossas atividades?",
-            "MLQ VAI FICA NO TELEGRAM DIA INTEIRO?\nFAZ FACULDADE NAO??"
+            "MLQ VAI FICA NO TELEGRAM DIA INTEIRO?\nFAZ FACULDADE NAO??",
+            "viu, quantos crédito ce ta fazendo falando no telegram?"
         ]
 
     def randomAnnoy(self, update):
