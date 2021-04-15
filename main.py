@@ -23,7 +23,7 @@ def main():
     dp.add_handler(CommandHandler("pi_rank", lineuzinho.getPiRanking))
     dp.add_handler(CommandHandler("pi_index", lineuzinho.generateUserPiRanking))
     dp.add_handler(CommandHandler("birthday", lineuzinho.birthday))
-    dp.add_handler(CommandHandler("beni", lineuzinho.birthday))
+    dp.add_handler(CommandHandler("beni", lineuzinho.beni))
     dp.add_handler(CommandHandler("grupos", lineuzinho.subjectsGroupsLinks))
     dp.add_handler(MessageHandler(Filters.text, lineuzinho.agiotar))
 
