@@ -17,6 +17,7 @@ class Lineuzinho:
         self.lives = "Live da primeira semana: http://bit.ly/aberturadasemana \n\nLive do JB: bit.ly/calldojb\n\n"
         self.usefulLinks = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\nEnquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh\n\nDrive com livros: http://bit.ly/livrosbccicmc\n\n".format(self.contatinhosSheet)
         self.docsChannel = "https://t.me/docs21"
+        self.groups = "Live da primeira semana: https://t.me/joinchat/loEfiwcvAV82ZmVh \n\n"
 
         self.greeter = Greeter()
         self.forwarder = Forwarder()
@@ -68,6 +69,9 @@ class Lineuzinho:
 
     def agiotar(self, update, context):
         self.activityAgiota.randomAnnoy(update)
+        
+    def grupos(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.groups)
     
     def birthday(self, update, context):
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
