@@ -15,9 +15,9 @@ class Lineuzinho:
         self.contatinhosSheet = "http://bit.ly/contatosbcc021"
         self.githubRepo = "https://github.com/lineuzinho-icmc/lineuzinho"
         self.lives = "Live da primeira semana: http://bit.ly/aberturadasemana \n\nLive do JB: bit.ly/calldojb\n\n"
+        self.subjectsGroupsLinks = "ICC1: https://t.me/joinchat/cxOk_L889nc2NDk5\n\nLAB ICC1 [Tarde]: https://t.me/joinchat/4KTLgPVis483NDUx\n\nLAB ICC1 [Noite]: https://t.me/joinchat/23qmmmmAnCg1ZDQx\n\nEletrônica: https://t.me/joinchat/0oBPQIAN17kwZTNh\n\nCálculo 1: https://t.me/joinchat/loEfiwcvAV82ZmVh\n\nG.A: https://t.me/joinchat/3i-Kuf256mo1ODA5\n\nILD: https://t.me/joinchat/TItjZehheg44NjIx\n\nPLD https://t.me/joinchat/ClHA1xPsSBRjZWUx"
         self.usefulLinks = "Estamos adicionando todo mundo aos poucos. Se puder ajudar a achar o pessoal, passa o link do grupo na descrição!\n\nInscrição na semana de recepção: calouros.icmc.usp.br/\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nContatinho de geral: {0}\n\nEnquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh\n\nDrive com livros: http://bit.ly/livrosbccicmc\n\n".format(self.contatinhosSheet)
         self.docsChannel = "https://t.me/docs21"
-        self.groups = "Calculo I: https://t.me/joinchat/loEfiwcvAV82ZmVh \n\n"
 
         self.greeter = Greeter()
         self.forwarder = Forwarder()
@@ -39,6 +39,9 @@ class Lineuzinho:
         
     def livesLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.lives, disable_web_page_preview=True)
+
+    def subjectsGroupsLinks(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsGroups, disable_web_page_preview=True)
 
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)
@@ -69,9 +72,6 @@ class Lineuzinho:
 
     def agiotar(self, update, context):
         self.activityAgiota.randomAnnoy(update)
-        
-    def grupos(self, update, context):
-        context.bot.send_message(chat_id=update.effective_chat.id, text=self.groups)
     
     def birthday(self, update, context):
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
