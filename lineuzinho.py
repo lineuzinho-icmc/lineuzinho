@@ -40,8 +40,8 @@ class Lineuzinho:
     def livesLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.lives, disable_web_page_preview=True)
 
-    def subjectsGroupsLinks(self, update, context):
-        context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsGroups, disable_web_page_preview=True)
+    def getSubjectsGroupsLinks(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsGroupsLinks, disable_web_page_preview=True)
 
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)

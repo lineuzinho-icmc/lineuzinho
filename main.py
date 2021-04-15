@@ -24,7 +24,7 @@ def main():
     dp.add_handler(CommandHandler("pi_index", lineuzinho.generateUserPiRanking))
     dp.add_handler(CommandHandler("birthday", lineuzinho.birthday))
     dp.add_handler(CommandHandler("beni", lineuzinho.beni))
-    dp.add_handler(CommandHandler("grupos", lineuzinho.subjectsGroupsLinks))
+    dp.add_handler(CommandHandler("grupos", lineuzinho.getSubjectsGroupsLinks))
     dp.add_handler(MessageHandler(Filters.text, lineuzinho.agiotar))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, lineuzinho.greet))
