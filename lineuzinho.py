@@ -75,3 +75,6 @@ class Lineuzinho:
     
     def birthday(self, update, context):
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
+
+    def beni(self, update, context):
+            context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/beni.mp3', 'rb'))
