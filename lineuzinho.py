@@ -1,12 +1,12 @@
 import os
 
 from internal.greeter import Greeter
-from internal.beaner import Beaner
 from internal.forwarder import Forwarder
-from internal.activityAgiota import ActivityAgiota
 from internal.pi_ranker import PiRanker
-import datetime
-import time, random
+from internal.beaner import Beaner
+from internal.ainer import Ainer
+
+from internal.activityAgiota import ActivityAgiota
 
 class Lineuzinho:
 
@@ -21,10 +21,11 @@ class Lineuzinho:
 
         self.greeter = Greeter()
         self.forwarder = Forwarder()
-        self.beaner = Beaner()
-        self.activityAgiota = ActivityAgiota()
-
         self.piRanker = PiRanker()
+        self.ainer = Ainer()
+        self.beaner = Beaner()
+
+        self.activityAgiota = ActivityAgiota()
 
     def start(self, update, context):
         update.message.reply_text("pó fala meu rei")
@@ -70,11 +71,15 @@ class Lineuzinho:
     def getHelpText(self, update, context):
         update.message.reply_text("digita \"/\" no teclado pra dar uma olhada nos comandos disponíveis :V")
 
-    def agiotar(self, update, context):
-        self.activityAgiota.randomAnnoy(update)
+    def getRandomAin(self, update, context):
+        ainPath = self.ainer.getRandomAinPath()
+        context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(ainPath, 'rb'))
     
     def getBirthdaySongAudio(self, update, context):
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/birthday.mp3', 'rb'))
 
     def getBeniSongAudio(self, update, context):
             context.bot.send_audio(chat_id=update.effective_chat.id, audio=open('resources/beni.mp3', 'rb'))
+
+    def agiotar(self, update, context):
+        self.activityAgiota.randomAnnoy(update)
