@@ -13,7 +13,6 @@ def main():
 
     dp.add_handler(CommandHandler("start", lineuzinho.start))
     dp.add_handler(CommandHandler("links", lineuzinho.getGeneralRelevantLinks))
-    dp.add_handler(CommandHandler("lives", lineuzinho.getLivesLinks))
     dp.add_handler(CommandHandler("repo", lineuzinho.getRepo))
     dp.add_handler(CommandHandler("contatinhos", lineuzinho.getContatinhosLink))
     dp.add_handler(CommandHandler("feijao", lineuzinho.getBeanFlavor))
@@ -24,6 +23,7 @@ def main():
     dp.add_handler(CommandHandler("pi_index", lineuzinho.publishUserPiRanking))
     dp.add_handler(CommandHandler("birthday", lineuzinho.getBirthdaySongAudio))
     dp.add_handler(CommandHandler("beni", lineuzinho.getBeniSongAudio))
+    dp.add_handler(CommandHandler("ain", lineuzinho.getRandomAin))
     dp.add_handler(CommandHandler("grupos", lineuzinho.getSubjectsGroupsLinks))
     dp.add_handler(MessageHandler(Filters.text, lineuzinho.agiotar))
 
