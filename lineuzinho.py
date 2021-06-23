@@ -36,7 +36,8 @@ class Lineuzinho:
         
         AVISOS: https://t.me/joinchat/B5qbuFd8x483ZThh"""
 
-        self.usefulLinks = """Se achar algum bixo de BCC021 que não tá aqui passa o link!
+        self.usefulLinks = """
+        Se achar algum bixo de BCC021 que não tá aqui passa o link!
         bit.ly/grupobcc021
         
         Guia do Bixo: https://bit.ly/3c9mcUG
@@ -52,6 +53,37 @@ class Lineuzinho:
         """
 
         self.docsChannel = "https://t.me/docs21"
+
+        self.subjectsMeetLinks = """
+        ICC 1: https://meet.google.com/nzp-anxg-amp
+        
+        LAB ICC 1 [14:20]: https://meet.google.com/cfg-xjts-yab
+
+        LAB ICC 1 [16:20]: https://meet.google.com/mah-wtqb-hiz
+
+        LAB ICC 1 [19:00]: https://meet.google.com/ojp-phwi-waq
+
+        LAB ICC 1 [21:00]: https://meet.google.com/hvt-nkzj-yrx
+
+        IPTA [Link antigo]: https://meet.google.com/zhw-bupa-bxr
+
+        IPTA [Link novo]: https://meet.google.com/oww-vdze-bhi 
+
+        Eletrônica [8:10]: https://meet.google.com/mgd-gfci-ctg
+
+        Eletrônica [10:10]: https://meet.google.com/kck-yfeq-ubd
+
+        Cálculo 1 [Aula Teórica]: https://meet.google.com/fjz-mobr-iwf
+
+        GA: https://meet.google.com/jqi-owfw-ngw
+
+        ILD: O link normalmente está no final da página da disciplina no e-disciplinas
+
+        PLD: https://meet.google.com/tzn-dhqg-qro
+
+        EHCA: https://meet.google.com/wga-kzud-zrg
+
+        """
 
         self.greeter = Greeter()
         self.forwarder = Forwarder()
@@ -77,6 +109,9 @@ class Lineuzinho:
 
     def getSubjectsGroupsLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsGroupsLinks, disable_web_page_preview=True)
+    
+    def getSubjectMeetLinks(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsMeetLinks, disable_web_page_preview=True)
 
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)
