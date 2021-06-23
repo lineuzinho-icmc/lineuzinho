@@ -14,9 +14,76 @@ class Lineuzinho:
         self.API_TOKEN = os.environ["SECRET"]
         self.contatinhosSheet = "http://bit.ly/contatosbcc021"
         self.githubRepo = "https://github.com/lineuzinho-icmc/lineuzinho"
-        self.subjectsGroupsLinks = "\nICC1: https://t.me/joinchat/cxOk_L889nc2NDk5\n\nMONITORIA ICC1: https://t.me/joinchat/xYXv3oiuMP8xYzA5\n\nLAB ICC1 [Tarde]: https://t.me/joinchat/4KTLgPVis483NDUx\n\nLAB ICC1 [Noite]: https://t.me/joinchat/23qmmmmAnCg1ZDQx\n\nEletrônica: https://t.me/joinchat/0oBPQIAN17kwZTNh\n\nCálculo 1: https://t.me/joinchat/loEfiwcvAV82ZmVh\n\nGA: https://t.me/joinchat/3i-Kuf256mo1ODA5\n\nILD: https://t.me/joinchat/TItjZehheg44NjIx\n\nPLD https://t.me/joinchat/ClHA1xPsSBRjZWUx\n\nAVISOS: https://t.me/joinchat/B5qbuFd8x483ZThh"
-        self.usefulLinks = "Se achar algum bixo de BCC021 que não tá aqui passa o link!\nbit.ly/grupobcc021\n\nGuia do Bixo: https://bit.ly/3c9mcUG\n\nEnquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh\n\nJogos: https://t.me/joinchat/wNjNYOmK96ozMmYx\n\nDrives dos livros:\nhttp://bit.ly/livrosbccicmc\nICC I: https://drive.google.com/file/d/1oafsU0c8v1NqQ4ALDpLSC785cmTwMubU/view?usp=sharing\n\n"
+
+        self.subjectsGroupsLinks = """
+        ICC1: https://t.me/joinchat/cxOk_L889nc2NDk5
+        
+        MONITORIA ICC1: https://t.me/joinchat/xYXv3oiuMP8xYzA5
+        
+        LAB ICC1 [Tarde]: https://t.me/joinchat/4KTLgPVis483NDUx
+        
+        LAB ICC1 [Noite]: https://t.me/joinchat/23qmmmmAnCg1ZDQx
+        
+        Eletrônica: https://t.me/joinchat/0oBPQIAN17kwZTNh
+        
+        Cálculo 1: https://t.me/joinchat/loEfiwcvAV82ZmVh
+        
+        GA: https://t.me/joinchat/3i-Kuf256mo1ODA5
+        
+        ILD: https://t.me/joinchat/TItjZehheg44NjIx
+        
+        PLD https://t.me/joinchat/ClHA1xPsSBRjZWUx
+        
+        AVISOS: https://t.me/joinchat/B5qbuFd8x483ZThh"""
+
+        self.usefulLinks = """
+        Se achar algum bixo de BCC021 que não tá aqui passa o link!
+        bit.ly/grupobcc021
+        
+        Guia do Bixo: https://bit.ly/3c9mcUG
+        
+        Enquetes: https://t.me/joinchat/qrJ_MrnHDbE1ZmNh
+        
+        Jogos: https://t.me/joinchat/wNjNYOmK96ozMmYx
+        
+        Drives dos livros:
+        http://bit.ly/livrosbccicmc
+        ICC I: https://drive.google.com/file/d/1oafsU0c8v1NqQ4ALDpLSC785cmTwMubU/view?usp=sharing
+        
+        """
+
         self.docsChannel = "https://t.me/docs21"
+
+        self.subjectsMeetLinks = """
+        ICC 1: https://meet.google.com/nzp-anxg-amp
+        
+        LAB ICC 1 [14:20]: https://meet.google.com/cfg-xjts-yab
+
+        LAB ICC 1 [16:20]: https://meet.google.com/mah-wtqb-hiz
+
+        LAB ICC 1 [19:00]: https://meet.google.com/ojp-phwi-waq
+
+        LAB ICC 1 [21:00]: https://meet.google.com/hvt-nkzj-yrx
+
+        IPTA [Link antigo]: https://meet.google.com/zhw-bupa-bxr
+
+        IPTA [Link novo]: https://meet.google.com/oww-vdze-bhi 
+
+        Eletrônica [8:10]: https://meet.google.com/mgd-gfci-ctg
+
+        Eletrônica [10:10]: https://meet.google.com/kck-yfeq-ubd
+
+        Cálculo 1 [Aula Teórica]: https://meet.google.com/fjz-mobr-iwf
+
+        GA: https://meet.google.com/jqi-owfw-ngw
+
+        ILD: O link normalmente está no final da página da disciplina no e-disciplinas
+
+        PLD: https://meet.google.com/tzn-dhqg-qro
+
+        EHCA: https://meet.google.com/wga-kzud-zrg
+
+        """
 
         self.greeter = Greeter()
         self.forwarder = Forwarder()
@@ -42,6 +109,9 @@ class Lineuzinho:
 
     def getSubjectsGroupsLinks(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsGroupsLinks, disable_web_page_preview=True)
+    
+    def getSubjectMeetLinks(self, update, context):
+        context.bot.send_message(chat_id=update.effective_chat.id, text=self.subjectsMeetLinks, disable_web_page_preview=True)
 
     def getRepo(self, update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=self.githubRepo)

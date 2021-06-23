@@ -25,6 +25,7 @@ def main():
     dp.add_handler(CommandHandler("beni", lineuzinho.getBeniSongAudio))
     dp.add_handler(CommandHandler("ain", lineuzinho.getRandomAin))
     dp.add_handler(CommandHandler("grupos", lineuzinho.getSubjectsGroupsLinks))
+    dp.add_handler(CommandHandler("meet", lineuzinho.getSubjectMeetLinks))
     dp.add_handler(MessageHandler(Filters.text, lineuzinho.agiotar))
 
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, lineuzinho.greet))
