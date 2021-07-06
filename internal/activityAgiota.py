@@ -9,10 +9,13 @@ class ActivityAgiota:
             "hahah pdp pdp e as atividades lá, tão pronta já? ",
             "s-s-senpai-chan 😳, já fizeste v-vossas atividades?",
             "MLQ VAI FICA NO TELEGRAM DIA INTEIRO?\nFAZ FACULDADE NAO??",
-            "viu, quantos crédito ce ta fazendo falando no telegram?"
+            "viu, quantos crédito ce ta fazendo falando no telegram?",
+            "pelo amor de deus {0} arruma essa postura",
+            "já se hidratou hoje??? levanta e vai tomar uma água!",
+            "a escoliose vem, hein? senta direito meu chapa"   
         ]
 
     def randomAnnoy(self, update):
         username = update.message.from_user.username
-        if randint(0, 400) == 250:
+        if randint(0, 300) == 250:
             update.message.reply_text(choice(self.cobradas).format(username))
