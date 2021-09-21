@@ -21,6 +21,7 @@ def main():
     dp.add_handler(CommandHandler("help", lineuzinho.getHelpText))
     dp.add_handler(CommandHandler("pi_rank", lineuzinho.getPiRanking))
     dp.add_handler(CommandHandler("pi_index", lineuzinho.publishUserPiRanking))
+    dp.add_handler(CommandHandler("paulo", lineuzinho.getPauloSeductionAudio))
     dp.add_handler(CommandHandler("birthday", lineuzinho.getBirthdaySongAudio))
     dp.add_handler(CommandHandler("beni", lineuzinho.getBeniSongAudio))
     dp.add_handler(CommandHandler("ain", lineuzinho.getRandomAin))
